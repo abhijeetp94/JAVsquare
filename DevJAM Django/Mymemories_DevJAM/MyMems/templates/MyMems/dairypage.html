@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+<head>
+	<title>JAVsquare</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static "MyMems/dairyf/images/icons/favicon.ico" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/vendor/bootstrap/css/bootstrap.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/vendor/animate/animate.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/vendor/css-hamburgers/hamburgers.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/vendor/select2/select2.min.css" %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/css/util.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "MyMems/dairyf/css/main.css" %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="bg-contact3" style="background-image: url('{% static "MyMems/dairyf/images/bg-01.jpg" %}')>
+		<div class="container-contact3">
+			<div class="wrap-contact3">
+				<form class="contact3-form validate-form">
+					<span class="contact3-form-title">
+						JAV Square NOTES
+					</span>
+					<div class = mb-3>
+						<!-- <p> {{vali}}</p> -->
+					</div>
+					<form action = 'http://127.0.0.1:8000/upload/' method="POST"> {% csrf_token %}
+						<input class="input3" name="un" placeholder="Username"></textarea>
+						<span class="focus-input3"></span>
+						<textarea class="input3" name="message" placeholder="Enter your Title here"></textarea>
+						<span class="focus-input3"></span>
+						<textarea class="input3" name="titlename" placeholder="Enter your Notes here"></textarea>
+						<span class="focus-input3"></span>
+						<button type="submit">
+							Submit
+						</button>
+					</form>
+						
+					
+					<span class="contact3-form-title">
+						Upload Image
+					</span>
+    <div class="upload-container">
+      <div class="border-container">
+        <div class="icons fa-4x">
+          <i class="fas fa-file-image" data-fa-transform="shrink-3 down-2 left-6 rotate--45"></i>
+          <i class="fas fa-file-alt" data-fa-transform="shrink-2 up-4"></i>
+          <i class="fas fa-file-pdf" data-fa-transform="shrink-3 down-2 right-6 rotate-45"></i>
+        </div>
+        <p>Drag and drop files here, or 
+          <a href="#" id="file-browser"> browse </a> your computer.</p>
+      </div>
+    </div>
+    <div class="container-contact3-form-btn">
+						<button class="contact3-form-btn">
+							Submit
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+
+
+<!--===============================================================================================-->
+	<script src="{% static "MyMems/dairyf/vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "MyMems/dairyf/vendor/bootstrap/js/popper.js" %}"></script>
+	<script src="{% static "MyMems/dairyf/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static "MyMems/dairyf/vendor/select2/select2.min.js" %}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static "MyMems/dairyf/js/main.js" %}"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

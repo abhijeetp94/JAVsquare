@@ -11,4 +11,7 @@ urlpatterns = [
     path('mistakes/',views.mistakes, name = "mistakes"),
     path('goals/',views.goals, name = "goals"),
     path('login/',views.login, name = "login"),
+    path('signup/',views.signup, name = "signup"),
+    path('signupsuccess/',views.signupsuccess, name = "signupsuccess"),
+    path('upload/',views.upload, name = "uploaded"),
 ]
